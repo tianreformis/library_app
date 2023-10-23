@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:library_app/screen/landing_screen.dart';
 
 class MyProfile extends StatefulWidget {
   const MyProfile({super.key});
@@ -15,7 +16,7 @@ class _MyProfileState extends State<MyProfile> {
       home: Scaffold(
         appBar: AppBar(
           title: const Text(
-            'Profile',
+            'Login',
             style: TextStyle(
               fontFamily: "Poppins Regular",
             ),
@@ -89,6 +90,24 @@ class _MyProfileState extends State<MyProfile> {
                 },
               ),
             ),
+            const SizedBox(
+              height: 8,
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.pop;
+                },
+                child: const Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    //Icon(Icons.input),
+                    SizedBox(
+                      height: 40,
+                    ),
+                    Text('Masuk'),
+                  ],
+                ))
           ],
         ),
       ),
