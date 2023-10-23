@@ -61,16 +61,22 @@ class LandingScreenState extends State<LandingScreen> {
                 ),
                 child: Padding(
                   padding: EdgeInsets.all(size.longestSide / 20),
-                  child: const Row(
+                  child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('Masuk'),
-                      SizedBox(
+                      Text(
+                        'Masuk',
+                        style: TextStyle(
+                          fontSize: size.longestSide / 40,
+                        ),
+                      ),
+                      const SizedBox(
                         width: 12,
                       ),
                       Icon(
                         Icons.login_rounded,
+                        size: size.longestSide / 40,
                       )
                     ],
                   ),

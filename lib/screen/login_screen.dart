@@ -36,31 +36,58 @@ class _MyProfileState extends State<MyProfile> {
             child: const Icon(Icons.arrow_back),
           ),
           actions: const [],
-          leadingWidth: 90,
+          leadingWidth: 60,
         ),
         body: Column(
           children: [
             // Text('$waktu'),
-            TextFormField(
-              decoration: InputDecoration(
-                labelText: "Masukkan Email",
-                fillColor: Colors.blue,
-                focusColor: Colors.red,
-                border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(50),
-                    borderSide: const BorderSide(
-                      style: BorderStyle.solid,
-                      color: Colors.black,
-                      width: 10,
-                    )),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: TextFormField(
+                decoration: InputDecoration(
+                  labelText: "Masukkan Email",
+                  fillColor: Colors.blue,
+                  focusColor: Colors.red,
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(50),
+                      borderSide: const BorderSide(
+                        style: BorderStyle.solid,
+                        color: Colors.black,
+                        width: 10,
+                      )),
+                ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Masukkan Username';
+                  } else {
+                    return null;
+                  }
+                },
               ),
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Masukkan Username';
-                } else {
-                  return null;
-                }
-              },
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 4.0, left: 16.0, right: 16.0),
+              child: TextFormField(
+                decoration: InputDecoration(
+                  labelText: "Masukkan Password",
+                  fillColor: Colors.blue,
+                  focusColor: Colors.red,
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(50),
+                      borderSide: const BorderSide(
+                        style: BorderStyle.solid,
+                        color: Colors.black,
+                        width: 10,
+                      )),
+                ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Masukkan Password';
+                  } else {
+                    return null;
+                  }
+                },
+              ),
             ),
           ],
         ),
