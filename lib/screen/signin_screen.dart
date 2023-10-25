@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import 'package:flutter/material.dart';
 import 'package:library_app/screen/landing_screen.dart';
 
@@ -148,7 +150,7 @@ class _SignInState extends State<SignIn> {
               height: 8.0,
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 12.0),
+              padding: const EdgeInsets.symmetric(horizontal: 12.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
