@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:library_app/screen/landing_screen.dart';
-import 'package:library_app/screen/signin_screen.dart';
 
-class MyProfile extends StatefulWidget {
-  const MyProfile({super.key});
+class SignIn extends StatefulWidget {
+  const SignIn({super.key});
 
   @override
-  State<MyProfile> createState() => _MyProfileState();
+  State<SignIn> createState() => _SignInState();
 }
 
-class _MyProfileState extends State<MyProfile> {
+class _SignInState extends State<SignIn> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -17,7 +16,7 @@ class _MyProfileState extends State<MyProfile> {
       home: Scaffold(
         appBar: AppBar(
           title: const Text(
-            'Login',
+            'Sign In',
             style: TextStyle(
               fontFamily: "Poppins Regular",
             ),
@@ -68,7 +67,7 @@ class _MyProfileState extends State<MyProfile> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 4.0, left: 16.0, right: 16.0),
+              padding: const EdgeInsets.only(top: 0.0, left: 16.0, right: 16.0),
               child: TextFormField(
                 decoration: InputDecoration(
                   labelText: "Masukkan Password",
@@ -85,6 +84,34 @@ class _MyProfileState extends State<MyProfile> {
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Masukkan Password';
+                  } else {
+                    return null;
+                  }
+                },
+              ),
+            ),
+            const SizedBox(
+              height: 8,
+            ),
+
+            Padding(
+              padding: const EdgeInsets.only(top: 4.0, left: 16.0, right: 16.0),
+              child: TextFormField(
+                decoration: InputDecoration(
+                  labelText: "Masukkan Alamat",
+                  fillColor: Colors.blue,
+                  focusColor: Colors.red,
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(50),
+                      borderSide: const BorderSide(
+                        style: BorderStyle.solid,
+                        color: Colors.black,
+                        width: 10,
+                      )),
+                ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Masukkan Alamat';
                   } else {
                     return null;
                   }
@@ -121,19 +148,13 @@ class _MyProfileState extends State<MyProfile> {
               height: 8.0,
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 12.0),
+              padding: EdgeInsets.symmetric(horizontal: 12.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text('Tidak Punya Akun,'),
                   TextButton(
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const SignIn(),
-                          ));
-                    },
+                    onPressed: () {},
                     child: const Text('Daftar'),
                   )
                 ],
